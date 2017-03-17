@@ -24,6 +24,7 @@ module.exports = {
 
     devServer: {
         hot: true,
+        historyApiFallback: true,
         contentBase: path.join(__dirname, 'src/public'),
     },
 
@@ -33,7 +34,8 @@ module.exports = {
                 test: /\.js$/,
                 loader: 'babel-loader',
                 options: {
-                    plugins: ['react-hot-loader/babel', 'react-html-attrs'],
+                    plugins: ['transform-decorators-legacy','react-hot-loader/babel', 'react-html-attrs'],
+                    cacheDirectory: isDebug,
                 },
                 exclude: /node_modules/
             },
@@ -50,7 +52,10 @@ module.exports = {
     plugins: [
         new webpack.optimize.UglifyJsPlugin(
             {
-                sourceMap: true
+                sourceMap: true,
+                compress : {
+                    warnings : false
+                }
             }
         ),
         new webpack.HotModuleReplacementPlugin(),
