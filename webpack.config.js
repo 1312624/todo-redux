@@ -35,7 +35,6 @@ module.exports = {
                 loader: 'babel-loader',
                 options: {
                     plugins: ['transform-decorators-legacy','react-hot-loader/babel', 'react-html-attrs'],
-                    cacheDirectory: isDebug,
                 },
                 exclude: /node_modules/
             },
