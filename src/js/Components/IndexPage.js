@@ -9,7 +9,6 @@ export default class IndexPage extends Component {
         return (
             <div>
                 <div>This is IndexPage</div>
-                <button class="btn btn-primary">Button</button>
             </div>
         );
     }

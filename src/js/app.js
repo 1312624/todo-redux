@@ -2,17 +2,26 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import AppRoute from './routes';
 import { AppContainer } from 'react-hot-loader';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import rootReducers from './Reducers/rootReducers';
+
 //styles
 import '../stylesheets/main.scss';
 
 const app = document.getElementById('app');
 
-//ReactDOM.render(<AppRoute />, app);
-function renderApp() {
-    // We now render `<AppContainer>` instead of our App component. 
+
+const initialState = {};
+//create store
+const store = createStore(rootReducers, initialState);
+
+const renderApp = () => {
     ReactDOM.render(
         <AppContainer>
-            <AppRoute />
+            <Provider store={store}>
+                <AppRoute />
+            </Provider>
         </AppContainer>,
         document.getElementById('app')
     );

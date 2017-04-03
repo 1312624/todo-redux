@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Layout from "./Components/Layout";
 import IndexPage from "./Components/IndexPage";
+import Todo from './Containers/Todo';
 import { Router, Route, browserHistory, IndexRoute } from "react-router";
 
 export default class AppRoute extends Component {
@@ -8,7 +9,7 @@ export default class AppRoute extends Component {
 		return (
 			<Router history={browserHistory} key={Math.random()}>
 				<Route path="/" component={Layout}>
-					<IndexRoute component={IndexPage}/>
+					<IndexRoute component={Todo}/>
 				</Route>
 			</Router>
 		);

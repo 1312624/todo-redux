@@ -1,3 +1,47 @@
-body {
-    background :red;
+* {
+   box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+
+   ul {
+        padding : 0;
+        li {
+            list-style-type: none;
+        }
+   }
+}
+
+.todo-3dots {
+    float: right;
+    padding: 5px;
+    position: relative !important;
+    display: inline-block !important;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:hover .todo-3dots-content {
+        display: block !important;
+    }
+
+    .todo-3dots-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 140px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        padding: 12px 16px;
+        z-index: 1;
+
+        left: -100px;
+
+        div {
+            padding: 5px;
+
+            p {
+                font-size: 1.2em;
+            }
+        }
+    }
 }
