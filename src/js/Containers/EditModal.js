@@ -6,7 +6,7 @@ export default class EditModal extends Component {
 
     Edit(id) {
         const { editTodo, idModal } = this.props;
-        editTodo(id, this.refs.editItem.value);
+        editTodo(id, this.editItem.value);
         document.getElementById(idModal).style.display = 'none';
     }
 
@@ -25,7 +25,7 @@ export default class EditModal extends Component {
                                 <form>
                                     <div class="form-group">
                                         <label for="editItem" style={{ marginRight: '5px' }}>Edit: </label>
-                                        <input type="text" ref="editItem" id="editItem" placeholder="Edit Your Item" />
+                                        <input type="text" ref={(input) => this.editItem = input} id="editItem" placeholder="Edit Your Item" />
                                     </div>
                                 </form>
                             </div>

@@ -22,9 +22,11 @@ class ToDo extends Component {
             <div>
                 <div class="row">
                     <div class="col-md-3 col-md-offset-1">
-                        <input id="inputTd" ref="inputTodo" style={{ marginRight : '5px' }}/>
+                        <input id="inputTd"
+                            ref={ (inputText) => this.inputTodo = inputText }
+                            style={{ marginRight : '5px' }}/>
                         <button class="btn btn-primary" onClick={() => {
-                            actions.addTodo(this.refs.inputTodo.value);
+                            actions.addTodo(this.inputTodo.value);
                             document.getElementById('inputTd').value = "";
                         }}>Add Todo</button>
                     </div>
