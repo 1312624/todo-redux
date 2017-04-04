@@ -10,7 +10,8 @@ export default class Item extends Component {
     }
 
     Edit(id) {
-        $(`#editModal-${id}`).modal('show');
+        //$(`#editModal-${id}`).modal('show');
+        document.getElementById(`editModal-${id}`).style.display = "block";
     }
 
     render() {
@@ -20,7 +21,7 @@ export default class Item extends Component {
         return (
             <div class="row" style={{ paddingTop: '10px' }}>
                 <div class="col-md-6 col-md-offset-1">
-                    <div class="panel panel-default">
+                    <div class="panel">
                         <div class="panel-heading">
                             <h3 class="panel-title">{id}</h3>
                         </div>
